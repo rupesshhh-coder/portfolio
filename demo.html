@@ -1,0 +1,3211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC PAGE INFORMATION
+    ===================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Rupesh Ghadge — Java Developer</title>
+
+    <meta name="description"
+          content="Rupesh Ghadge — Java Developer and Associate Software Developer from Pune.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         ALL CSS
+         Everything is inside this file.
+         You do NOT need a separate style.css file.
+    ===================================================== -->
+
+    <style>
+
+
+        .certificate h3 a { color: inherit; text-decoration: none; transition: color 0.2s ease; } .certificate h3 a:hover { color: var(--blue); }
+
+
+        /* =====================================================
+           ROOT / COLORS
+        ===================================================== */
+
+        :root {
+
+            --black: #050505;
+            --dark: #090909;
+
+            --card: #0d0d0d;
+            --card2: #111111;
+
+            --white: #f5f5f5;
+
+            --gray: #999999;
+            --gray2: #666666;
+
+            --border: #222222;
+
+            /* Main accent color */
+            --blue: #38bdf8;
+            --blue-dark: #0ea5e9;
+
+            --max: 1180px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background: var(--black);
+
+            color: var(--white);
+
+            font-family: "Inter", sans-serif;
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =====================================================
+           BACKGROUND GRID
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.25;
+
+            background-image:
+                linear-gradient(#ffffff08 1px, transparent 1px),
+                linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+
+            background-size: 50px 50px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 80%
+            );
+
+            z-index: -2;
+        }
+
+
+        /* =====================================================
+           GLOW
+        ===================================================== */
+
+        .glow {
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: var(--blue);
+
+            filter: blur(180px);
+
+            opacity: 0.06;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           COMMON CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: min(90%, var(--max));
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(5, 5, 5, 0.82);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+
+            height: 72px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .logo {
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-weight: 600;
+
+            font-size: 1rem;
+
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+
+            color: var(--gray);
+
+            font-size: 0.85rem;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-contact {
+
+            border: 1px solid var(--border);
+
+            padding: 9px 16px;
+
+            font-size: 0.8rem;
+
+            transition: 0.3s;
+        }
+
+        .nav-contact:hover {
+
+            border-color: var(--blue);
+
+            color: var(--blue);
+        }
+
+
+        /* =====================================================
+           HERO SECTION
+        ===================================================== */
+
+        .hero {
+
+            min-height: calc(100vh - 72px);
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            padding: 75px 0;
+        }
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.25fr 0.75fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 0.72rem;
+
+            color: var(--blue);
+
+            margin-bottom: 20px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+        .status-dot {
+
+            width: 7px;
+            height: 7px;
+
+            background: var(--blue);
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 15px var(--blue);
+        }
+
+        /* Smaller than the original */
+        .hero h1 {
+
+            font-size: clamp(2.8rem, 5.5vw, 5rem);
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--gray2);
+        }
+
+        .hero-role {
+
+            font-size: 1.15rem;
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+
+            color: #ddd;
+        }
+
+        .hero-role span {
+            color: var(--blue);
+        }
+
+        .hero-description {
+
+            max-width: 600px;
+
+            color: var(--gray);
+
+            font-size: 0.95rem;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+
+            padding: 12px 19px;
+
+            font-size: 0.8rem;
+
+            font-weight: 600;
+
+            border: 1px solid var(--border);
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+
+            background: var(--blue);
+
+            color: #000;
+
+            border-color: var(--blue);
+        }
+
+        .btn-primary:hover {
+
+            background: transparent;
+
+            color: var(--blue);
+        }
+
+        .btn-secondary:hover {
+
+            border-color: #555;
+
+            background: #111;
+        }
+
+
+       /* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-photo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Circular Photo Frame */
+
+.photo-frame {
+
+    position: relative;
+
+    width: 260px;
+    height: 260px;
+
+    border: 1px solid #292929;
+
+    padding: 8px;
+
+    background: #0b0b0b;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+}
+
+
+/* Blue Corner Lines */
+
+.photo-frame::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    border-top: 2px solid var(--blue);
+
+    border-left: 2px solid var(--blue);
+
+    top: -7px;
+    left: -7px;
+
+    border-radius: 50%;
+}
+
+
+.photo-frame::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    border-right: 2px solid var(--blue);
+
+    border-bottom: 2px solid var(--blue);
+
+    bottom: -7px;
+    right: -7px;
+
+    border-radius: 50%;
+}
+
+
+/* Hero Image */
+
+.photo-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(15%);
+
+    opacity: 0.95;
+
+    border-radius: 50%;
+}
+
+
+/* Photo Label */
+
+.photo-label {
+    margin-top: 14px;
+    background: var(--black);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.65rem;
+    color: var(--gray);
+    align-self: center;
+}
+
+
+.photo-label span {
+    color: var(--blue);
+}
+
+        /* =====================================================
+           TECH BAR
+        ===================================================== */
+
+        .tech-bar {
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 20px 0;
+        }
+
+        .tech-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .tech-row span {
+
+            font-family: "JetBrains Mono", monospace;
+
+            color: #555;
+
+            font-size: 0.7rem;
+
+            letter-spacing: 1px;
+        }
+
+        .tech-row strong {
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           COMMON SECTION
+        ===================================================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            margin-bottom: 50px;
+
+            border-bottom: 1px solid var(--border);
+
+            padding-bottom: 20px;
+        }
+
+        .section-number {
+
+            color: var(--blue);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 0.72rem;
+
+            margin-bottom: 9px;
+        }
+
+        .section-header h2 {
+
+            font-size: 2.4rem;
+
+            letter-spacing: -1.5px;
+        }
+
+        .section-header p {
+
+            color: var(--gray);
+
+            font-size: 0.82rem;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 0.7fr 1.3fr;
+
+            gap: 65px;
+        }
+
+        .about-left h3 {
+
+            font-size: 1.9rem;
+
+            line-height: 1.2;
+        }
+
+        .about-left span {
+            color: var(--blue);
+        }
+
+        .about-right p {
+
+            color: var(--gray);
+
+            margin-bottom: 18px;
+
+            font-size: 0.92rem;
+        }
+
+        .about-stats {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 35px;
+
+            border: 1px solid var(--border);
+        }
+
+        .stat {
+
+            padding: 22px;
+
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat strong {
+
+            display: block;
+
+            font-size: 1.5rem;
+
+            color: var(--white);
+        }
+
+        .stat span {
+
+            color: var(--gray2);
+
+            font-size: 0.68rem;
+
+            font-family: "JetBrains Mono", monospace;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-layout {
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 25px;
+        }
+
+        .skill-intro {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 32px;
+        }
+
+        .skill-intro h3 {
+
+            font-size: 1.4rem;
+
+            margin-bottom: 14px;
+        }
+
+        .skill-intro p {
+
+            color: var(--gray);
+
+            font-size: 0.88rem;
+        }
+
+        .skill-groups {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        .skill-group {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 23px;
+
+            transition: 0.3s;
+        }
+
+        .skill-group:hover {
+
+            border-color: #333;
+
+            transform: translateY(-3px);
+        }
+
+        .skill-group h4 {
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 0.72rem;
+
+            color: var(--blue);
+
+            margin-bottom: 13px;
+
+            text-transform: uppercase;
+        }
+
+        .skill-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+        }
+
+        .skill-tag {
+
+            border: 1px solid #252525;
+
+            background: #111;
+
+            color: #aaa;
+
+            padding: 6px 9px;
+
+            font-size: 0.7rem;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+        .experience-card {
+
+            display: grid;
+
+            grid-template-columns: 0.3fr 1fr 0.7fr;
+
+            gap: 28px;
+
+            padding: 32px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-year {
+
+            font-family: "JetBrains Mono", monospace;
+
+            color: var(--blue);
+
+            font-size: 0.72rem;
+        }
+
+        .experience-main h3 {
+
+            font-size: 1.25rem;
+
+            margin-bottom: 4px;
+        }
+
+        .company {
+
+            color: #888;
+
+            font-size: 0.82rem;
+        }
+
+        .experience-description {
+
+            color: var(--gray);
+
+            font-size: 0.8rem;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects {
+
+            display: grid;
+
+            grid-template-columns: repeat(12, 1fr);
+
+            gap: 15px;
+        }
+
+        .project {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 30px;
+
+            min-height: 285px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.4s;
+        }
+
+        .project:hover {
+
+            border-color: #3a3a3a;
+
+            transform: translateY(-5px);
+        }
+
+        .project:nth-child(1) {
+            grid-column: span 7;
+        }
+
+        .project:nth-child(2) {
+            grid-column: span 5;
+        }
+
+        .project:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        .project:nth-child(4) {
+            grid-column: span 7;
+        }
+
+        .project:nth-child(5),
+        .project:nth-child(6) {
+            grid-column: span 6;
+        }
+
+        .project:nth-child(7),
+        .project:nth-child(8),
+        .project:nth-child(9) {
+            grid-column: span 4;
+        }
+
+        .project-number {
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 0.68rem;
+
+            color: var(--blue);
+
+            margin-bottom: 28px;
+        }
+
+        .project h3 {
+
+            font-size: 1.35rem;
+
+            margin-bottom: 10px;
+        }
+
+        .project p {
+
+            color: var(--gray);
+
+            font-size: 0.8rem;
+
+            max-width: 600px;
+        }
+
+        .project-tech {
+
+            position: absolute;
+
+            bottom: 27px;
+            left: 30px;
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+        .project-tech span {
+
+            font-family: "JetBrains Mono", monospace;
+
+            color: #777;
+
+            font-size: 0.62rem;
+        }
+
+        .project-links {
+
+            position: absolute;
+
+            right: 28px;
+            bottom: 25px;
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .project-links a {
+
+            color: #777;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 0.62rem;
+
+            border-bottom: 1px solid #333;
+
+            transition: 0.3s;
+        }
+
+        .project-links a:hover {
+
+            color: var(--blue);
+
+            border-color: var(--blue);
+        }
+
+        .project-arrow {
+
+            position: absolute;
+
+            top: 27px;
+            right: 28px;
+
+            font-size: 1.2rem;
+
+            color: #444;
+
+            transition: 0.3s;
+        }
+
+        .project:hover .project-arrow {
+
+            color: var(--blue);
+
+            transform: translate(4px, -4px);
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .education-card {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 28px;
+        }
+
+        .education-card .year {
+
+            font-family: "JetBrains Mono", monospace;
+
+            color: var(--blue);
+
+            font-size: 0.68rem;
+
+            margin-bottom: 22px;
+        }
+
+        .education-card h3 {
+
+            font-size: 1.05rem;
+
+            margin-bottom: 9px;
+        }
+
+        .education-card p {
+
+            color: var(--gray);
+
+            font-size: 0.8rem;
+        }
+
+        .education-card .score {
+
+            margin-top: 18px;
+
+            color: #ddd;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           CERTIFICATIONS
+        ===================================================== */
+
+        .certifications {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .certificate {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 23px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            transition: 0.3s;
+        }
+
+        .certificate:hover {
+
+            border-color: #333;
+        }
+
+        .certificate h3 {
+
+            font-size: 0.88rem;
+
+            margin-bottom: 4px;
+        }
+
+        .certificate p {
+
+            color: var(--gray2);
+
+            font-size: 0.72rem;
+        }
+
+        .certificate span {
+
+            font-family: "JetBrains Mono", monospace;
+
+            color: var(--blue);
+
+            font-size: 0.68rem;
+        }
+
+
+        /* =====================================================
+           LEARNING / CODING PROFILES
+        ===================================================== */
+
+        .learning-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .learning-card {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 28px;
+
+            transition: 0.3s;
+        }
+
+        .learning-card:hover {
+
+            border-color: #333;
+
+            transform: translateY(-3px);
+        }
+
+        .learning-card h3 {
+
+            font-size: 1rem;
+
+            margin-bottom: 8px;
+        }
+
+        .learning-card p {
+
+            color: var(--gray);
+
+            font-size: 0.78rem;
+
+            margin-bottom: 20px;
+        }
+
+        .learning-link {
+
+            color: var(--blue);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 0.68rem;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+
+            text-align: center;
+
+            padding: 130px 0;
+        }
+
+        .contact .section-number {
+            margin-bottom: 18px;
+        }
+
+        .contact h2 {
+
+            font-size: clamp(3rem, 7vw, 5.5rem);
+
+            letter-spacing: -4px;
+
+            line-height: 1;
+
+            margin-bottom: 22px;
+        }
+
+        .contact h2 span {
+            color: var(--blue);
+        }
+
+        .contact p {
+
+            color: var(--gray);
+
+            max-width: 500px;
+
+            margin: 0 auto 30px;
+
+            font-size: 0.88rem;
+        }
+
+        .email {
+
+            font-family: "JetBrains Mono", monospace;
+
+            color: #aaa;
+
+            border-bottom: 1px solid #444;
+
+            padding-bottom: 5px;
+
+            transition: 0.3s;
+        }
+
+        .email:hover {
+
+            color: var(--blue);
+
+            border-color: var(--blue);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            border-top: 1px solid var(--border);
+
+            padding: 24px 0;
+        }
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        footer p {
+
+            color: #555;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 0.62rem;
+        }
+
+        .socials {
+
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .socials a {
+
+            color: #666;
+
+            font-size: 0.68rem;
+
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        .socials a:hover {
+            color: var(--blue);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE DESIGN
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 55px;
+            }
+
+            .hero {
+
+                text-align: center;
+            }
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-photo {
+                order: -1;
+            }
+
+            .photo-frame {
+
+                width: 220px;
+                height: 270px;
+            }
+
+            .about-grid,
+            .skills-layout {
+
+                grid-template-columns: 1fr;
+            }
+
+            .experience-card {
+
+                grid-template-columns: 1fr;
+
+                gap: 7px;
+            }
+
+            .project:nth-child(n) {
+                grid-column: span 12;
+            }
+
+            .education-grid,
+            .learning-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 88%;
+            }
+
+            .hero {
+
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+
+                font-size: 3rem;
+
+                letter-spacing: -2.5px;
+            }
+
+            .hero-role {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .section-header p {
+                margin-top: 9px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-stats {
+
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+
+                border-right: none;
+
+                border-bottom: 1px solid var(--border);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .skill-groups,
+            .certifications {
+
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+
+                min-height: 300px;
+
+                padding: 25px;
+            }
+
+            .project-tech {
+
+                left: 25px;
+            }
+
+            .project-links {
+
+                right: 25px;
+            }
+
+            .contact {
+
+                padding: 100px 0;
+            }
+
+            .contact h2 {
+
+                font-size: 3.4rem;
+
+                letter-spacing: -2.5px;
+            }
+
+            .footer-content {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+    <div class="container nav">
+
+        <!-- LOGO -->
+        <a href="#home" class="logo">
+            rupesh<span>.dev</span>
+        </a>
+
+
+        <!-- NAVIGATION LINKS -->
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#learning">Learning</a>
+            </li>
+
+        </ul>
+
+
+        <!-- CONTACT BUTTON -->
+        <a href="#contact" class="nav-contact">
+            Let's Talk ↗
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO SECTION
+     Edit your name, role and introduction here.
+===================================================== -->
+
+<section id="home" class="hero">
+
+    <div class="glow"
+         style="top: -150px; left: -150px;">
+    </div>
+
+
+    <div class="container hero-grid">
+
+
+        <!-- HERO TEXT -->
+        <div>
+
+            <div class="eyebrow">
+
+                <span class="status-dot"></span>
+
+                Open to Software Development Opportunities
+
+            </div>
+
+
+            <h1>
+
+                Rupesh
+                <span>Ghadge.</span>
+
+            </h1>
+
+
+            <div class="hero-role">
+
+                Java <span>Developer</span> |
+
+                Associate Software Developer
+
+            </div>
+
+
+            <p class="hero-description">
+
+                I am a software developer focused on Java and backend development. I build web applications using Java, Spring Boot, REST APIs, and MySQL, with a strong interest in software engineering, problem-solving, and continuous learning.
+
+
+            </p>
+
+
+            <!-- HERO BUTTONS -->
+            <div class="buttons">
+
+                <!-- <a href="#projects"
+                   class="btn btn-primary">
+
+                    View Projects ↗
+
+                </a> -->
+
+
+                <a href="images/Rupesh_Resume.pdf"
+                   target="_blank"
+                   class="btn btn-primary">
+
+                    Resume ↓
+
+                </a>
+
+
+                <a href="https://github.com/rupesshhh-coder"
+                   target="_blank"
+                   class="btn btn-secondary">
+
+                    GitHub ↗
+
+                </a>
+
+                <!-- LinkedIn Button --> 
+                 <a href="https://www.linkedin.com/in/rupesshhh"
+                  target="_blank"
+                   class="btn btn-secondary"> 
+
+                   LinkedIn ↗ 
+                
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+       <!-- HERO PHOTO -->
+<div class="hero-photo">
+
+    <div class="photo-frame">
+
+        <!-- Keep Rupesh_Photo.jpeg in the same folder -->
+        <img src="images/Rupesh_Photo.jpeg"
+             alt="Rupesh Ghadge">
+
+    </div>
+
+    <!-- Photo Label -->
+    <div class="photo-label">
+        <span></span>  developer_profile
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TECH BAR
+===================================================== -->
+
+<div class="tech-bar">
+
+    <div class="container tech-row">
+
+        <span>
+            CORE
+            <strong>JAVA</strong>
+        </span>
+
+        <span>
+            FRAMEWORK
+            <strong>SPRING BOOT</strong>
+        </span>
+
+        <span>
+            DATABASE
+            <strong>MYSQL</strong>
+        </span>
+
+        <span>
+            API
+            <strong>REST</strong>
+        </span>
+
+        <span>
+            VERSION CONTROL
+            <strong>GIT</strong>
+        </span>
+
+        <span>
+            LOCATION
+            <strong>PUNE, INDIA</strong>
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ABOUT SECTION
+===================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    ABOUT
+                </div>
+
+                <h2>
+                    A little about me.
+                </h2>
+
+            </div>
+
+            <p>
+                Developer / Problem Solver
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-left">
+
+                <h3>
+
+                    Building software,
+
+                    <span>
+                        learning continuously.
+                    </span>
+
+                </h3>
+
+            </div>
+
+
+            <div class="about-right">
+
+                <p>
+
+                    I am a BCA graduate from Savitribai Phule Pune
+                    University with a strong foundation in Java
+                    and backend development.
+
+                </p>
+
+
+                <p>
+
+                    Currently working as an Associate Software
+                    Developer at Esanchalak Solutions & Services Private Limited, where I am gaining experience
+                    with real-world software development workflows.
+
+                </p>
+
+
+                <p>
+
+                    My technical foundation includes Core Java,
+                    Spring Boot, JDBC, Hibernate, REST APIs and
+                    MySQL. I enjoy debugging applications,
+                    understanding backend workflows and building
+                    practical solutions.
+
+                </p>
+
+
+                <!-- ABOUT STATS -->
+                <div class="about-stats">
+
+                    <div class="stat">
+
+                        <strong>2025</strong>
+
+                        <span>
+                            BCA GRADUATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>Java</strong>
+
+                        <span>
+                            PRIMARY STACK
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>Pune</strong>
+
+                        <span>
+                            BASED IN INDIA
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS SECTION
+===================================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    SKILLS
+                </div>
+
+                <h2>
+                    My technical stack.
+                </h2>
+
+            </div>
+
+            <p>
+                Technologies & tools
+            </p>
+
+        </div>
+
+
+        <div class="skills-layout">
+
+
+            <!-- SKILL INTRO -->
+            <div class="skill-intro">
+
+                <h3>
+
+                    Tools I use to turn
+                    ideas into software.
+
+                </h3>
+
+
+                <p>
+
+                    My primary focus is Java backend development.
+                    I also work with databases, APIs, frontend
+                    technologies and common development tools.
+
+                </p>
+
+            </div>
+
+
+            <!-- SKILL GROUPS -->
+            <div class="skill-groups">
+
+
+                <!-- BACKEND -->
+                <div class="skill-group">
+
+                    <h4>
+                        Backend
+                    </h4>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">JDBC</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">JPA</span>
+                        <span class="skill-tag">Servlets</span>
+                        <span class="skill-tag">JSP</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FRONTEND -->
+                <div class="skill-group">
+
+                    <h4>
+                        Frontend
+                    </h4>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React.js</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATABASE -->
+                <div class="skill-group">
+
+                    <h4>
+                        Database
+                    </h4>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOOLS -->
+                <div class="skill-group">
+
+                    <h4>
+                        Tools
+                    </h4>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Swagger</span>
+                        <span class="skill-tag">Maven</span>
+                        <span class="skill-tag">IntelliJ IDEA</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRAMMING -->
+                <div class="skill-group">
+
+                    <h4>
+                        Programming
+                    </h4>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONCEPTS -->
+                <div class="skill-group">
+
+                    <h4>
+                        Concepts
+                    </h4>
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">CRUD</span>
+                        <span class="skill-tag">MVC</span>
+                        <span class="skill-tag">OOP</span>
+                        <span class="skill-tag">Debugging</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE SECTION
+     Current company work stays here.
+===================================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    EXPERIENCE
+                </div>
+
+                <h2>
+                    Where I've worked.
+                </h2>
+
+            </div>
+
+            <p>
+                Professional journey
+            </p>
+
+        </div>
+
+
+        <!-- CURRENT JOB -->
+        <div class="experience-card">
+
+            <div class="experience-year">
+                2026 — NOW
+            </div>
+
+
+            <div class="experience-main">
+
+                <h3>
+                    Associate Software Developer
+                </h3>
+
+                <div class="company">
+
+                  Esanchalak Solutions & Services Private Limited, Pune
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-description">
+
+                Working on software development tasks,
+                understanding application workflows,
+                debugging applications and applying
+                development practices in a professional
+                environment.
+
+            </div>
+
+        </div>
+
+
+        <!-- JAVA TRAINING -->
+        <div class="experience-card">
+
+            <div class="experience-year">
+                2025 — 2026
+            </div>
+
+
+            <div class="experience-main">
+
+                <h3>
+                   Java Full-Stack Intern
+                </h3>
+
+                <div class="company">
+                    Kiran Academy, Pune
+                </div>
+
+            </div>
+
+
+            <div class="experience-description">
+
+                Hands-on training in Core Java, JDBC,
+                Hibernate, Spring Boot, REST APIs,
+                MySQL and web application development.
+
+            </div>
+
+        </div>
+
+
+        <!-- INTERNSHIP -->
+        <div class="experience-card">
+
+            <div class="experience-year">
+                2024
+            </div>
+
+
+            <div class="experience-main">
+
+                <h3>
+                    React Native Developer Intern
+                </h3>
+
+                <div class="company">
+                    Junghare.tech — Remote
+                </div>
+
+            </div>
+
+
+            <div class="experience-description">
+
+                Worked on React Native fundamentals,
+                mobile UI components, Git basics and
+                application development learning.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS SECTION
+     
+     IMPORTANT:
+     Trading project is shown as professional experience
+     style work, not as a public GitHub repository.
+===================================================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    PROJECTS
+                </div>
+
+                <h2>
+                    Things I've built.
+                </h2>
+
+            </div>
+
+            <p>
+                Selected work
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- =================================================
+                 PROJECT 01
+                 COMPANY WORK / NO PUBLIC REPO
+            ================================================= -->
+
+            <!-- <div class="project">
+
+                <div class="project-number">
+                    01 / PROFESSIONAL WORK
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Trading Webhook & Order Management
+                </h3>
+
+                <p>
+
+                    Backend trading workflow involving signal
+                    processing, order lifecycle management,
+                    database operations and broker API
+                    integration.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>JAVA</span>
+                    <span>SPRING BOOT</span>
+                    <span>MYSQL</span>
+                    <span>REST API</span>
+                    <span>JDBC</span>
+
+                </div>
+
+            </div> -->
+
+
+
+            <!-- =================================================
+                 PROJECT 01
+                 AMAZON CLONE
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    01 / WEB APP
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Amazon Clone
+                </h3>
+
+                <p>
+
+                    E-commerce web application developed using
+                    Java, Spring technologies, JSP, Servlets
+                    and MySQL following an MVC-style structure.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>JAVA</span>
+                    <span>JSP</span>
+                    <span>SERVLETS</span>
+                    <span>MYSQL</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/amazon-clone"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 02
+                 STOCK MARKET SYSTEM
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    02 / API
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Stock Market System
+                </h3>
+
+                <p>
+
+                    Stock market application using Java web
+                    technologies, MySQL and external market
+                    data APIs.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>JAVA</span>
+                    <span>SERVLETS</span>
+                    <span>JSP</span>
+                    <span>API</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/stock-market-system"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 03
+                 PRODUCT MANAGEMENT
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    03 / FULL STACK
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Product Management System
+                </h3>
+
+                <p>
+
+                    Product management application with CRUD
+                    operations, Java backend, database integration
+                    and a separate frontend application.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>JAVA</span>
+                    <span>SPRING BOOT</span>
+                    <span>MYSQL</span>
+                    <span>REACT</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/product-management-system"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 04
+                 DIGITAL LIBRARY
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    04 / OOP
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Digital Library System
+                </h3>
+
+                <p>
+
+                    Java-based library management application
+                    created to practice object-oriented programming
+                    and application logic.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>JAVA</span>
+                    <span>OOP</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/digital-library-system"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 05
+                 EMPLOYEE MANAGEMENT
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    05 / CRUD
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Employee Management System
+                </h3>
+
+                <p>
+
+                    CRUD-based Java application for managing
+                    employee information using database operations.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>JAVA</span>
+                    <span>JDBC</span>
+                    <span>MYSQL</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/employee-management-system"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 06
+                 IPL
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    06 / JDBC
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    IPL Player Management
+                </h3>
+
+                <p>
+
+                    JDBC-based application for managing IPL
+                    player information and database operations.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>JAVA</span>
+                    <span>JDBC</span>
+                    <span>MYSQL</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/IPL_Player_Management_System_(JDBC)"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 07
+                 CAR GAME
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    07 / GAME
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Car Game
+                </h3>
+
+                <p>
+
+                    Browser-based racing game with keyboard
+                    controls, enemy cars, collision detection,
+                    score and increasing speed.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JAVASCRIPT</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/car-game"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                    <a href="https://rupesshhh-coder.github.io/car-game/"
+                       target="_blank">
+
+                        Live ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 08
+                 TIC TAC TOE
+            ================================================= -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    08 / GAME
+                </div>
+
+                <div class="project-arrow">
+                    ↗
+                </div>
+
+                <h3>
+                    Tic Tac Toe
+                </h3>
+
+                <p>
+
+                    Simple browser-based two-player game with
+                    winner detection, draw detection and reset
+                    functionality.
+
+                </p>
+
+
+                <div class="project-tech">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JAVASCRIPT</span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="https://github.com/rupesshhh-coder/tic-tac-toe"
+                       target="_blank">
+
+                        GitHub ↗
+
+                    </a>
+
+                    <a href="https://rupesshhh-coder.github.io/tic-tac-toe/"
+                       target="_blank">
+
+                        Live ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- =================================================
+     PROJECT 09
+     ROCK PAPER SCISSORS
+================================================= -->
+
+<div class="project">
+
+<div class="project-number">
+    09 / GAME
+</div>
+
+<div class="project-arrow">
+    ↗
+</div>
+
+<h3>
+    Rock Paper Scissors
+</h3>
+
+<p>
+
+    Simple browser-based game with random computer
+    moves, win/loss detection, draw detection and
+    score tracking.
+
+</p>
+
+
+<div class="project-tech">
+
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JAVASCRIPT</span>
+
+</div>
+
+
+<div class="project-links">
+
+    <a href="https://github.com/rupesshhh-coder/rock-paper-scissors"
+       target="_blank">
+
+        GitHub ↗
+
+    </a>
+
+    <a href="https://rupesshhh-coder.github.io/rock-paper-scissors/"
+       target="_blank">
+
+        Live ↗
+
+    </a>
+
+</div>
+
+</div>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION SECTION
+===================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    EDUCATION
+                </div>
+
+                <h2>
+                    Academic background.
+                </h2>
+
+            </div>
+
+            <p>
+                Education
+            </p>
+
+        </div>
+
+
+        <div class="education-grid">
+
+
+            <!-- BCA -->
+            <div class="education-card">
+
+                <div class="year">
+                    2022 — 2025
+                </div>
+
+                <h3>
+                    Bachelor of Computer Applications
+                </h3>
+
+                <!-- <p>
+                    S.M. Joshi College, Pune
+                </p> -->
+
+                <p>
+                    Savitribai Phule Pune University
+                </p>
+
+                <div class="score">
+                    CGPA — 7.99
+                </div>
+
+            </div>
+
+
+            <!-- HSC -->
+            <div class="education-card">
+
+                <div class="year">
+                    2022
+                </div>
+
+                <h3>
+                    Higher Secondary Certificate
+                </h3>
+
+                <p>
+                    Maharashtra State Board
+                </p>
+
+                <div class="score">
+                    61.67%
+                </div>
+
+            </div>
+
+
+            <!-- SSC -->
+            <div class="education-card">
+
+                <div class="year">
+                    2020
+                </div>
+
+                <h3>
+                    Secondary School Certificate
+                </h3>
+
+                <p>
+                    Maharashtra State Board
+                </p>
+
+                <div class="score">
+                    85.20%
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CERTIFICATIONS SECTION
+     
+     If you later get certificate URLs,
+     convert the certificate cards into links.
+===================================================== -->
+
+<section id="certifications">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    CERTIFICATIONS
+                </div>
+
+                <h2>
+                    Credentials.
+                </h2>
+
+            </div>
+
+            <p>
+                Learning & development
+            </p>
+
+        </div>
+
+
+        <div class="certifications">
+
+
+            <!-- JAVA FULL STACK -->
+            <div class="certificate">
+
+                <div>
+
+                   <h3> <a href="images/Java_Fullstck_Certificate.pdf" target="_blank"> Java Full-Stack Development Program ↗ </a> </h3>
+                    <p>
+                        Kiran Academy, Pune
+                    </p>
+
+                </div>
+
+                <span>
+                    JAVA
+                </span>
+
+            </div>
+
+
+            <!-- HACKERRANK -->
+            <div class="certificate">
+
+                <div>
+
+                    <h3> <a href="images/Java_basic.pdf" target="_blank"> Java — Gold Badge ↗ </a> </h3>
+
+                    <p>
+                        HackerRank
+                    </p>
+
+                </div>
+
+                <span>
+                    JAVA
+                </span>
+
+            </div>
+
+
+            <!-- AWS -->
+            <div class="certificate">
+
+                <div>
+
+                    <h3> <a href="images/AWS.jpg" target="_blank"> AWS Cloud Training Program ↗ </a> </h3>
+                    <p>
+                        Kamal Berry IT Services Pvt. Ltd.
+                    </p>
+
+                </div>
+
+                <span>
+                    AWS
+                </span>
+
+            </div>
+
+
+            <!-- LINUX -->
+            <div class="certificate">
+
+                <div>
+
+                   <h3> <a href="images/Basic Linux.jpg" target="_blank"> Basic Linux ↗ </a> </h3>
+
+                    <p>
+                        ACE Infoedge
+                    </p>
+
+                </div>
+
+                <span>
+                    LINUX
+                </span>
+
+            </div>
+
+
+            <!-- HARDWARE -->
+            <div class="certificate">
+
+                <div>
+
+                   <h3> <a href="images/PC Assembly.jpg" target="_blank"> PC Assembly Workshop ↗ </a> </h3>
+
+                    <p>
+                        S.M. Joshi College
+                    </p>
+
+                </div>
+
+                <span>
+                    HARDWARE
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LEARNING / CODING PROFILES
+     
+     IMPORTANT:
+     Replace the three placeholder links below
+     with your actual profile URLs.
+===================================================== -->
+
+<section id="learning">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="section-number">
+                    LEARNING
+                </div>
+
+                <h2>
+                    Always learning.
+                </h2>
+
+            </div>
+
+            <p>
+                Coding & practice
+            </p>
+
+        </div>
+
+
+        <div class="learning-grid">
+
+
+            <!-- HACKERRANK -->
+            <div class="learning-card">
+
+                <h3>
+                    HackerRank
+                </h3>
+
+                <p>
+                    Practicing Java, SQL and problem-solving
+                    through coding challenges.
+                </p>
+
+                <!-- Replace this link -->
+                <a href="https://www.hackerrank.com/profile/rupesshhh03"
+                   target="_blank"
+                   class="learning-link">
+
+                    View Profile ↗
+
+                </a>
+
+            </div>
+
+
+            <!-- LEETCODE -->
+            <div class="learning-card">
+
+                <h3>
+                    LeetCode
+                </h3>
+
+                <p>
+                    Practicing data structures, algorithms
+                    and coding problems.
+                </p>
+
+                <!-- Replace this link -->
+                <a href="https://leetcode.com/u/rupesshhh_/"
+                   target="_blank"
+                   class="learning-link">
+
+                    View Profile ↗
+
+                </a>
+
+            </div>
+
+
+            <!-- SOLOLEARN -->
+            <div class="learning-card">
+
+                <h3>
+                    SoloLearn
+                </h3>
+
+                <p>
+                    Continuing programming and technical
+                    learning through online courses.
+                </p>
+
+                <!-- Replace this link -->
+                <a href="https://www.sololearn.com/en/profile/34183771"
+                   target="_blank"
+                   class="learning-link">
+
+                    View Profile ↗
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT SECTION
+===================================================== -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            CONTACT
+        </div>
+
+
+        <h2>
+
+            Let's build<br>
+
+            <span>
+                something.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Looking for Java development opportunities,
+            collaborations or interesting technical projects?
+            Let's connect.
+
+        </p>
+
+
+        <!-- EMAIL -->
+        <a class="email"
+           href="mailto:rupeshghadge333@gmail.com">
+
+            rupeshghadge333@gmail.com ↗
+
+        </a>
+
+
+        <br>
+        <br>
+        <br>
+
+
+        <!-- CONTACT BUTTONS -->
+        <div class="buttons"
+             style="justify-content:center;">
+
+
+            <a href="https://www.linkedin.com/in/rupesshhh"
+               target="_blank"
+               class="btn btn-secondary">
+
+                LinkedIn ↗
+
+            </a>
+
+
+            <a href="https://github.com/rupesshhh-coder"
+               target="_blank"
+               class="btn btn-secondary">
+
+                GitHub ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-content">
+
+
+        <p>
+
+            © 2026 RUPESH GHADGE —
+            JAVA DEVELOPER
+
+        </p>
+
+
+        <div class="socials">
+
+
+            <a href="https://github.com/rupesshhh-coder"
+               target="_blank">
+
+                GITHUB
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/rupesshhh"
+               target="_blank">
+
+                LINKEDIN
+
+            </a>
+
+
+            <a href="mailto:rupeshghadge333@gmail.com">
+
+                EMAIL
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
